@@ -13,20 +13,26 @@
 \mode<presentation>{
   \usetheme{Berlin}
   % \usecolortheme{dove}
-  \setbeamercolor{structure}{bg=black,fg=magenta}
+  \setbeamercolor{structure}{bg=transparent,fg=magenta}
   \setbeamercolor{normal text}{bg=black,fg=white}
-  \setbeamercolor{titlepage}{bg=black,fg=white}
-  \setbeamercolor{titlelike}{bg=black,fg=white}
-  \setbeamercolor{palette primary}{bg=black}
-  \setbeamercolor{palette secondary}{bg=black, fg=gray}
-  \setbeamercolor{palette tertiary}{bg=black, fg=magenta}
-  \setbeamercolor{palette quarternary}{bg=black}
+  \setbeamercolor{titlepage}{bg=transparent,fg=white}
+  \setbeamercolor{titlelike}{bg=transparent,fg=white}
+  \setbeamercolor{palette primary}{bg=transparent}
+  \setbeamercolor{palette secondary}{bg=transparent, fg=gray}
+  \setbeamercolor{palette tertiary}{bg=transparent, fg=magenta}
+  \setbeamercolor{palette quarternary}{bg=transparent}
   \setbeamercovered{transparent}
   \useinnertheme{rectangles}
   %\usefonttheme{serif}
 }
 
+% Logo als Wasserzeichen im Hintergrund
 \setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background}{
+  \tikz[overlay,remember picture]\node[opacity=0.2, at=(current page.south east),anchor=south east,inner sep=4pt]{
+    \includegraphics[width=6cm]{images/ZaPFLogo_Berlin_Text.png}
+  };
+}
 
 % vorgeplaenkel
 \title[TU-Konzept]{TU-Konzept}
